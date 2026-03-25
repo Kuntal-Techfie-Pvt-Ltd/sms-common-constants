@@ -1,0 +1,93 @@
+/**
+ * Payment & Fee Related Enums
+ */
+
+/**
+ * Payment Status
+ */
+export enum PaymentStatus {
+  PENDING = 'PENDING',
+  PROCESSING = 'PROCESSING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
+  REFUNDED = 'REFUNDED',
+  PARTIALLY_REFUNDED = 'PARTIALLY_REFUNDED',
+  OVERDUE = 'OVERDUE',
+}
+
+/**
+ * Payment Method
+ */
+export enum PaymentMethod {
+  CASH = 'CASH',
+  CARD = 'CARD',
+  CREDIT_CARD = 'CREDIT_CARD',
+  DEBIT_CARD = 'DEBIT_CARD',
+  NET_BANKING = 'NET_BANKING',
+  UPI = 'UPI',
+  WALLET = 'WALLET',
+  CHEQUE = 'CHEQUE',
+  DEMAND_DRAFT = 'DEMAND_DRAFT',
+  BANK_TRANSFER = 'BANK_TRANSFER',
+  ONLINE = 'ONLINE',
+}
+
+/**
+ * Fee Type
+ */
+export enum FeeType {
+  TUITION_FEE = 'TUITION_FEE',
+  ADMISSION_FEE = 'ADMISSION_FEE',
+  REGISTRATION_FEE = 'REGISTRATION_FEE',
+  ANNUAL_FEE = 'ANNUAL_FEE',
+  EXAM_FEE = 'EXAM_FEE',
+  LIBRARY_FEE = 'LIBRARY_FEE',
+  LAB_FEE = 'LAB_FEE',
+  TRANSPORT_FEE = 'TRANSPORT_FEE',
+  HOSTEL_FEE = 'HOSTEL_FEE',
+  SPORTS_FEE = 'SPORTS_FEE',
+  DEVELOPMENT_FEE = 'DEVELOPMENT_FEE',
+  COMPUTER_FEE = 'COMPUTER_FEE',
+  ACTIVITY_FEE = 'ACTIVITY_FEE',
+  LATE_FEE = 'LATE_FEE',
+  FINE = 'FINE',
+  MISCELLANEOUS = 'MISCELLANEOUS',
+}
+
+/**
+ * Fee Frequency
+ */
+export enum FeeFrequency {
+  ONE_TIME = 'ONE_TIME',
+  MONTHLY = 'MONTHLY',
+  QUARTERLY = 'QUARTERLY',
+  HALF_YEARLY = 'HALF_YEARLY',
+  ANNUAL = 'ANNUAL',
+  CUSTOM = 'CUSTOM',
+}
+
+/**
+ * Invoice Status
+ */
+export enum InvoiceStatus {
+  DRAFT = 'DRAFT',
+  SENT = 'SENT',
+  PAID = 'PAID',
+  PARTIALLY_PAID = 'PARTIALLY_PAID',
+  OVERDUE = 'OVERDUE',
+  CANCELLED = 'CANCELLED',
+  REFUNDED = 'REFUNDED',
+}
+
+/**
+ * Transaction Type
+ */
+export enum TransactionType {
+  PAYMENT = 'PAYMENT',
+  REFUND = 'REFUND',
+  ADJUSTMENT = 'ADJUSTMENT',
+  WAIVER = 'WAIVER',
+  DISCOUNT = 'DISCOUNT',
+  PENALTY = 'PENALTY',
+}
