@@ -14,4 +14,6 @@ export * from './transport.enum';
 export * from './user-roles.enum';
 export * from './task-type.enum';
 export * from './school.enum';
+export * from './school-event.enum';
+export * from './school-exam-category.enum';
 

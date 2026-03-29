@@ -53,6 +53,7 @@ export enum FeeType {
   LATE_FEE = 'LATE_FEE',
   FINE = 'FINE',
   MISCELLANEOUS = 'MISCELLANEOUS',
+  BUS_FEE = 'BUS_FEE',
 }
 
 /**
@@ -90,4 +91,35 @@ export enum TransactionType {
   WAIVER = 'WAIVER',
   DISCOUNT = 'DISCOUNT',
   PENALTY = 'PENALTY',
+}
+
+/**
+ * Fee Status — lifecycle of a student/teacher fee record
+ */
+export enum FeeStatus {
+  PENDING = 'PENDING',
+  PARTIAL = 'PARTIAL',
+  PAID = 'PAID',
+  OVERDUE = 'OVERDUE',
+  WAIVED = 'WAIVED',
+  EXEMPTED = 'EXEMPTED',
+}
+
+/**
+ * Receipt Verification Status — manual receipt upload review
+ */
+export enum ReceiptVerificationStatus {
+  PENDING = 'PENDING',
+  VERIFIED = 'VERIFIED',
+  REJECTED = 'REJECTED',
+  PROCESSING = 'PROCESSING',
+}
+
+/**
+ * Fee Applicable To — who the fee applies to
+ */
+export enum FeeApplicableTo {
+  STUDENT = 'STUDENT',
+  TEACHER = 'TEACHER',
+  ALL = 'ALL',
 }

@@ -26,6 +26,42 @@ export enum SchoolShift {
 }
 
 /**
+ * Working-day codes for school_shifts.days_of_week (comma-separated VARCHAR).
+ * Wire/DB format (MON…SUN) — keep stable for API consumers and stored data.
+ * Distinct from DayOfWeek in common.enum (full names) by design.
+ */
+export enum ShiftDayOfWeekCode {
+  MON = 'MON',
+  TUE = 'TUE',
+  WED = 'WED',
+  THU = 'THU',
+  FRI = 'FRI',
+  SAT = 'SAT',
+  SUN = 'SUN',
+}
+
+/** Calendar order Monday → Sunday for UI chips and consistent parsing */
+export const SHIFT_WORKING_DAYS_ORDER: ShiftDayOfWeekCode[] = [
+  ShiftDayOfWeekCode.MON,
+  ShiftDayOfWeekCode.TUE,
+  ShiftDayOfWeekCode.WED,
+  ShiftDayOfWeekCode.THU,
+  ShiftDayOfWeekCode.FRI,
+  ShiftDayOfWeekCode.SAT,
+  ShiftDayOfWeekCode.SUN,
+];
+
+/** Default days_of_week when creating a new shift (Mon–Sat) */
+export const DEFAULT_SHIFT_WORKING_DAYS = [
+  ShiftDayOfWeekCode.MON,
+  ShiftDayOfWeekCode.TUE,
+  ShiftDayOfWeekCode.WED,
+  ShiftDayOfWeekCode.THU,
+  ShiftDayOfWeekCode.FRI,
+  ShiftDayOfWeekCode.SAT,
+].join(',');
+
+/**
  * Holiday Type
  * Used in school_holidays table
  */
