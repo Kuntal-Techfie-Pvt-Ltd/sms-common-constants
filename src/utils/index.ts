@@ -4,3 +4,4 @@
  */
 
 export * from './api-response.handler';
+export * from './string-case';
