@@ -35,6 +35,14 @@ export enum LiveStatus {
 }
 
 /**
+ * Live status values permitted for demographics DB entities
+ */
+export const DEMOGRAPHIC_DB_LIVE_STATUS_VALUES: readonly LiveStatus[] = [
+  LiveStatus.ACTIVE,
+  LiveStatus.INACTIVE,
+] as const;
+
+/**
  * Approval Status
  */
 export enum ApprovalStatus {
