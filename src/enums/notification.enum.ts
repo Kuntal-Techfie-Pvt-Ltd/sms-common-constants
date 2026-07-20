@@ -50,6 +50,7 @@ export enum NotificationType {
   // System
   SYSTEM_UPDATE = 'SYSTEM_UPDATE',
   MAINTENANCE = 'MAINTENANCE',
+  ACCOUNT_CREATED = 'ACCOUNT_CREATED',
 }
 
 /**
