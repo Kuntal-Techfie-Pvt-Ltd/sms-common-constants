@@ -16,4 +16,5 @@ export * from './task-type.enum';
 export * from './school.enum';
 export * from './school-event.enum';
 export * from './school-exam-category.enum';
+export * from './registration-event.enum';
 
