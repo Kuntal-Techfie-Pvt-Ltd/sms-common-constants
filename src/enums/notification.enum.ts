@@ -84,6 +84,8 @@ export enum NotificationChannel {
   PUSH = 'PUSH',
   IN_APP = 'IN_APP',
   WHATSAPP = 'WHATSAPP',
+  /** Internal-only mail — delivered to sms-email's inbox, never the public internet. */
+  INTERNAL_EMAIL = 'INTERNAL_EMAIL',
 }
 
 /**
