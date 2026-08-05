@@ -8,6 +8,9 @@
 // API Codes
 export * from './api-codes';
 
+// UI Content Dictionary (control names/labels, shared by sms-web and mobile apps)
+export * from './content';
+
 // Enums
 export * from './enums';
 
