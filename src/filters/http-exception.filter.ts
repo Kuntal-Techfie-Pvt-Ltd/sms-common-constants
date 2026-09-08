@@ -203,6 +203,20 @@ export class AllExceptionsFilter implements ExceptionFilter {
           this.extractErrorDetails(httpException)
         );
 
+        // Same message-preserving logic as HttpExceptionFilter — this filter is the one
+        // that actually ends up handling HttpExceptions at runtime (its catch-all @Catch()
+        // wins over HttpExceptionFilter's more specific one), so it needs its own copy of
+        // the fix rather than relying on HttpExceptionFilter's to ever run for these.
+        const exceptionResponse = httpException.getResponse();
+        const exceptionMessage =
+          typeof exceptionResponse === 'object' && (exceptionResponse as any).message
+            ? (exceptionResponse as any).message
+            : httpException.message;
+        const genericReasonPhrases = ['Unauthorized', 'Conflict', 'Bad Request', 'Forbidden', 'Not Found', 'Internal Server Error'];
+        if (exceptionMessage && !genericReasonPhrases.includes(exceptionMessage)) {
+          errorResponse.message = exceptionMessage;
+        }
+
         response.status(status).json(errorResponse);
         return;
       } catch (error) {
