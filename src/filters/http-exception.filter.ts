@@ -50,16 +50,20 @@ export class HttpExceptionFilter implements ExceptionFilter {
       errorDetails
     );
 
-    // For 401, prefer the exception message (e.g. "Invalid credentials") so login shows the real reason
-    if (status === HttpStatus.UNAUTHORIZED) {
-      const exceptionResponse = exception.getResponse();
-      const exceptionMessage =
-        typeof exceptionResponse === 'object' && (exceptionResponse as any).message
-          ? (exceptionResponse as any).message
-          : exception.message;
-      if (exceptionMessage && exceptionMessage !== 'Unauthorized') {
-        errorResponse.message = exceptionMessage;
-      }
+    // Prefer the exception's own message whenever it carries one distinct from Nest's generic
+    // reason phrase for that status — otherwise any HttpException thrown with a custom body
+    // (e.g. { code: 'SESSION_LIMIT_REACHED', message: 'You already have an active session...' })
+    // gets silently overwritten with the generic catalog message for its HTTP status (e.g. 409
+    // -> "Duplicate entry not allowed."), which is wrong whenever the exception wasn't actually
+    // about a duplicate-key conflict. Previously this only applied to 401.
+    const exceptionResponse = exception.getResponse();
+    const exceptionMessage =
+      typeof exceptionResponse === 'object' && (exceptionResponse as any).message
+        ? (exceptionResponse as any).message
+        : exception.message;
+    const genericReasonPhrases = ['Unauthorized', 'Conflict', 'Bad Request', 'Forbidden', 'Not Found', 'Internal Server Error'];
+    if (exceptionMessage && !genericReasonPhrases.includes(exceptionMessage)) {
+      errorResponse.message = exceptionMessage;
     }
 
     response.status(status).json(errorResponse);
