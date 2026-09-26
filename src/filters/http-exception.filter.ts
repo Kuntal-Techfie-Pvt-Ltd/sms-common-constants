@@ -66,6 +66,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
       errorResponse.message = exceptionMessage;
     }
 
+    if (response.headersSent || response.writableEnded || (response as any).destroyed) {
+      return;
+    }
     response.status(status).json(errorResponse);
   }
 
@@ -268,6 +271,12 @@ export class AllExceptionsFilter implements ExceptionFilter {
       request.method
     );
 
+    // The client may already be gone (aborted request → ERR_STREAM_PREMATURE_CLOSE) or a
+    // response may be half-written. Writing again throws ERR_HTTP_HEADERS_SENT from inside
+    // the filter, which nothing catches — it crashed the whole service process.
+    if (response.headersSent || response.writableEnded || (response as any).destroyed) {
+      return;
+    }
     response.status(HttpStatus.INTERNAL_SERVER_ERROR).json(errorResponse);
   }
 
