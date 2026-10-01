@@ -1070,6 +1070,85 @@ export const UI_CONTENT_EN: UiContentDictionary = {
           }
         }
       }
+    },
+    "onboarding": {
+      "payment": {
+        "title": "Payment",
+        "fromOnboarding": "Payment recorded during onboarding",
+        "edit": "Edit payment",
+        "useOnboarding": "Use the onboarding payment",
+        "none": "No payment was recorded during onboarding. Fill it in if one was received (optional).",
+        "incomplete": "Fill the payment mode, amount and received date — or leave all payment fields empty.",
+        "amountPositive": "The amount must be more than 0."
+      },
+      "adminPassword": {
+        "title": "School admin password (optional)",
+        "password": "School admin password",
+        "confirm": "Confirm password",
+        "rules": "At least 8 characters, with letters and digits.",
+        "hint": "Share it with the school admin yourself; they will be asked to change it at first login.",
+        "show": "Show",
+        "hide": "Hide",
+        "tooShort": "The password must be at least 8 characters.",
+        "lettersDigits": "The password must contain both letters and digits.",
+        "mismatch": "The passwords do not match."
+      },
+      "activate": {
+        "title": "Activate {{name}}?",
+        "body": "Once active, the school admin and staff can log in.",
+        "confirm": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate {{name}}?",
+        "body": "Nobody from this school can log in while it is inactive.",
+        "confirm": "Deactivate"
+      },
+      "common": {
+        "cancel": "Cancel",
+        "working": "Please wait…"
+      },
+      "plan": {
+        "title": "Plan & payment",
+        "plan": "Subscription plan",
+        "selectPlan": "Select a plan…",
+        "noPlans": "No active school plans found.",
+        "startDate": "Subscription start date",
+        "endDate": "Subscription end date",
+        "paymentMode": "Payment mode",
+        "amount": "Amount received (₹)",
+        "reference": "Reference (cheque / UTR / transaction no.)",
+        "referenceOptional": "Reference (optional for cash)",
+        "receivedOn": "Payment received on",
+        "receipt": "Receipt (optional)",
+        "receiptUploaded": "Receipt uploaded",
+        "viewReceipt": "View receipt",
+        "save": "Save plan & mark done",
+        "update": "Update plan",
+        "edit": "Edit plan",
+        "cancel": "Cancel",
+        "saved": "Plan and payment recorded",
+        "endAfterStart": "The end date must be after the start date.",
+        "fillAll": "Choose a plan, both dates, the payment mode, an amount above 0 and the received date.",
+        "referenceRequired": "A reference is required unless the payment is cash.",
+        "needPlanFirst": "Record the plan and payment below to tick this.",
+        "summaryPlan": "Plan",
+        "summaryPeriod": "Period",
+        "summaryPayment": "Payment",
+        "summaryReceived": "Received on",
+        "fromOnboarding": "Plan agreed during onboarding",
+        "modes": {
+          "CASH": "Cash",
+          "CHEQUE": "Cheque",
+          "UPI": "UPI",
+          "BANK_TRANSFER": "Bank transfer",
+          "OTHER": "Other"
+        }
+      },
+      "approval": {
+        "waitingAdmin": "Waiting for company admin approval",
+        "adminOnly": "Only a company admin can approve, reject or activate.",
+        "createdWaiting": "School created. A company admin will approve and activate it."
+      }
     }
   },
   "app": {
