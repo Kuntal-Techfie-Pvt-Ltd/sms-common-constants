@@ -271,6 +271,15 @@ export const UI_CONTENT_EN: UiContentDictionary = {
       }
     },
     "fees": {
+      "remindButton": "Send fee reminders",
+      "remindConfirm": "Remind students and parents of every unpaid fee (due within 3 days, overdue, or without a due date)?",
+      "remindDone": "Reminders sent: {{due}} due, {{overdue}} overdue",
+      "remindFailed": "Could not send fee reminders",
+      "remindDaily": "Reminders also go out automatically every morning: 3 days before the due date, on the due date, then weekly while overdue.",
+      "deleteInvoice": "Delete",
+      "deleteConfirm": "Delete this unpaid invoice? Use this only for an invoice raised by mistake.",
+      "deleted": "Invoice deleted",
+      "deleteFailed": "Could not delete the invoice",
       "title": "Fees",
       "addFee": "Add Fee",
       "editFee": "Edit Fee",
