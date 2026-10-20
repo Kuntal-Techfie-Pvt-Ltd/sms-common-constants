@@ -10,3 +10,5 @@ container instead: `docker exec -w /app/sms-common-constants sms-company /app/no
 ## 2026-09-30
 - `web.onboarding` (plan & payment + approval labels) added in en + hi for the school onboarding flow
   (docs/flows/school-onboarding). dist rebuilt in the sms-company container.
+
+2026-10-19: content en/hi `web.fees` — fee reminder + delete-invoice keys (remindButton, remindConfirm, remindDone, remindFailed, remindDaily, deleteInvoice, deleteConfirm, deleted, deleteFailed).
