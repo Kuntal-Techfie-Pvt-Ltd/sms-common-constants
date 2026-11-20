@@ -5,6 +5,16 @@ All notable changes to the SMS Common Constants package will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-11-20
+
+### Added
+- **School Constants (`src/enums/school.enum.ts`)**:
+  - `SCHOOL_REGISTRATION_CLASSES`: Standard school grade offerings for public registration intake (`Playgroup / Pre-KG`, `LKG`, `UKG`, `Class 1` through `Class 12`).
+  - `SCHOOL_CONTACT_DESIGNATIONS`: Role designations for school registration contact persons (`Principal`, `Vice Principal`, `Director / Trustee`, `Headmaster / Headmistress`, `Administrator`, `Academic Coordinator`, `Owner / Founder`, `Others`).
+
+### Changed
+- `package.json`: Updated `clean` script to use cross-platform `rimraf dist`.
+
 ## [1.0.0] - 2025-01-11
 
 ### Added
